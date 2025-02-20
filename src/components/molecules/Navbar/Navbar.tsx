@@ -3,13 +3,11 @@
 import { LogoButton, NavBarButton } from "@/components/atoms";
 import { IconBookmark, IconUserCircle } from "@tabler/icons-react";
 import { useRouter } from "next/navigation";
-import { useAppStore } from "@/stores/useAppStore";
 
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   const router = useRouter();
-  const { user } = useAppStore();
 
   const onBuyClick = () => {
     router.push("/buy");
@@ -36,13 +34,9 @@ const Navbar = () => {
         <NavBarButton onClick={onSavedClick}>
           <IconBookmark />
         </NavBarButton>
-        {user ? (
-          <NavBarButton onClick={onProfileClick}>
-            <IconUserCircle />
-          </NavBarButton>
-        ) : (
-          <NavBarButton text="Join" onClick={onProfileClick} variant="active" />
-        )}
+        <NavBarButton onClick={onProfileClick}>
+          <IconUserCircle />
+        </NavBarButton>
       </div>
     </div>
   );

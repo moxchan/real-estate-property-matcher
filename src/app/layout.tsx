@@ -3,6 +3,8 @@ import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/molecules";
 import { ToastContainer } from "react-toastify";
+import { QueryProvider } from "@/@utils/providers/QueryProvider";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,11 +29,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} ${roboto_mono.variable}`}>
-        <ToastContainer autoClose={2000} position="bottom-right" />
-        <Navbar />
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${inter.variable} ${roboto_mono.variable}`}
+        suppressHydrationWarning
+      >
+        <QueryProvider>
+          <ToastContainer autoClose={2000} position="bottom-right" />
+          <Navbar />
+          {children}
+          <ReactQueryDevtools initialIsOpen={false} />
+        </QueryProvider>
       </body>
     </html>
   );

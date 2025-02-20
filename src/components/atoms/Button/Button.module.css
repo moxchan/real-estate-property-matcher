@@ -34,3 +34,23 @@
 .primary:hover {
   background-color: var(--red-dark);
 }
+
+.disabled {
+  cursor: default;
+  background-color: var(--neutral-200);
+}
+
+.disabled:hover {
+  background-color: var(--neutral-200);
+}
+
+.selected {
+  cursor: default;
+  background-color: var(--neutral-700);
+  border: 1px solid var(--neutral-700);
+  color: var(--neutral-100);
+}
+
+.selected:hover {
+  background-color: var(--neutral-700);
+}

@@ -1,3 +1,5 @@
+"use client";
+
 import { isClient } from "./isClient";
 
 export function useLocalStorage(key: string) {

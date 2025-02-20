@@ -25,3 +25,8 @@
 
   color: var(--neutral-100);
 }
+
+.bold {
+  color: var(--red);
+  font-weight: 800;
+}

@@ -1,0 +1,9 @@
+.root {
+  display: flex;
+
+  padding: var(--space-04);
+}
+
+.title {
+  font-size: var(--font-size-xl);
+}
