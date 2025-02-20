@@ -1,5 +1,5 @@
 export const capitalise = (s: string) =>
   s
-    .split(" ")
+    ?.split(" ")
     .map((v) => v[0].toUpperCase() + v.slice(1))
     .join(" ");

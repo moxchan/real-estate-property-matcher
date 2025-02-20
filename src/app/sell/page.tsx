@@ -1,6 +1,6 @@
 "use client";
 
-import SellListingForm from "@/components/molecules/SellListingForm/SellListingForm";
+import SellListingForm from "@/components/organisms/SellListingForm/SellListingForm";
 import { useAppStore } from "@/stores/useAppStore";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";

@@ -24,12 +24,31 @@
   color: var(--neutral-700);
 }
 
+.inputCluster {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  gap: var(--space-05);
+
+  color: var(--neutral-600);
+}
+
+.input {
+  width: 100%;
+}
+
 .section {
   display: flex;
   flex-direction: column;
 
-  padding: var(--space-05);
+  padding: var(--space-04);
+  padding-bottom: var(--space-06);
   gap: var(--space-04);
 
   justify-content: center;
+}
+
+.inputWarning {
+  color: var(--red);
 }
