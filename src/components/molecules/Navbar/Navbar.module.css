@@ -1,0 +1,16 @@
+.root {
+  display: flex;
+  flex-direction: row;
+
+  padding: var(--space-04);
+  justify-content: space-between;
+
+  background-color: var(--neutral-800);
+}
+
+.cluster {
+  display: flex;
+  flex-direction: row;
+
+  gap: var(--space-04);
+}

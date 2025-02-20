@@ -1,0 +1,56 @@
+.root {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  padding: var(--space-04);
+  gap: var(--space-05);
+
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--border-radius-md);
+  color: var(--neutral-700);
+
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+}
+
+.root:hover {
+  background-color: var(--neutral-100);
+}
+
+.expanded {
+  width: 100%;
+}
+
+.primary {
+  background-color: var(--red);
+  color: var(--neutral-050);
+  border: 1px solid var(--red);
+}
+
+.primary:hover {
+  background-color: var(--red-dark);
+}
+
+.disabled {
+  cursor: default;
+  background-color: var(--neutral-200);
+}
+
+.disabled:hover {
+  background-color: var(--neutral-200);
+}
+
+.selected {
+  cursor: default;
+  background-color: var(--neutral-700);
+  border: 1px solid var(--neutral-700);
+  color: var(--neutral-100);
+}
+
+.selected:hover {
+  background-color: var(--neutral-700);
+}

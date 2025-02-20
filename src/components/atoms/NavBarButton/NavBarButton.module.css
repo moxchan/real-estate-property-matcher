@@ -1,0 +1,32 @@
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: var(--space-03) var(--space-05);
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+}
+
+.active {
+  background: var(--red);
+  padding: var(--space-03) var(--space-07);
+}
+
+.root:hover {
+  background-color: var(--neutral-600);
+}
+
+.text {
+  user-select: none;
+
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+
+  color: var(--neutral-100);
+}
+
+.bold {
+  color: var(--red);
+  font-weight: 800;
+}

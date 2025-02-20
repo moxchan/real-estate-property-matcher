@@ -1,0 +1,24 @@
+[
+  {
+    "id": 0,
+    "title": "Cozy 2-Bedroom Apartment",
+    "location": "Box Hill",
+    "price": 700000,
+    "beds": 2,
+    "baths": 1,
+    "carparks": 1,
+    "type": "apartment",
+    "poster": "Steve"
+  },
+  {
+    "id": 1,
+    "title": "A nice townhouse in Balwyn North",
+    "location": "Balwyn North",
+    "price": 750000,
+    "beds": 3,
+    "baths": 2,
+    "carparks": 1,
+    "type": "house",
+    "poster": "Max"
+  }
+]
