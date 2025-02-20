@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { readFile, writeFile } from "fs/promises";
 import { Listing } from "@/@types/listing";
+import { FILE_PATH } from "../constants";
 
 // Vercel Edge Function params
 export const preferredRegion = ["syd1"];
@@ -8,22 +9,12 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic"; // static by default, unless reading the request
 export const maxDuration = 60;
 
-const filePath = "./src/app/api/json/listings.json"; //janky i know.
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export async function GET(req: NextRequest) {
-  const data = await readFile(filePath, {
-    encoding: "utf-8",
-  });
-  return NextResponse.json(JSON.parse(data));
-}
-
 export async function POST(req: NextRequest) {
   try {
     const listing: Listing = await req.json();
 
     const listings: Listing[] = JSON.parse(
-      await readFile(filePath, {
+      await readFile(FILE_PATH, {
         encoding: "utf-8",
       })
     );
@@ -38,7 +29,7 @@ export async function POST(req: NextRequest) {
 
     listings.push({ ...listing, id: newId });
 
-    await writeFile(filePath, JSON.stringify(listings));
+    await writeFile(FILE_PATH, JSON.stringify(listings));
 
     return NextResponse.json(
       {

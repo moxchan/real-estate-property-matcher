@@ -1,3 +1,4 @@
+export { default as ContentPreview } from "./ContentPreview/ContentPreview";
 export { default as ListingCard } from "./ListingCard/ListingCard";
 export { default as Navbar } from "./Navbar/Navbar";
 export { default as PropertyTypeCluster } from "./PropertyTypeCluster/PropertyTypeCluster";

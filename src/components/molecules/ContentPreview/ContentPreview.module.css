@@ -1,0 +1,42 @@
+.root {
+  display: flex;
+  flex-direction: column;
+
+  padding: var(--space-04);
+  gap: var(--space-04);
+
+  border-radius: var(--border-radius-md);
+}
+
+.items {
+  min-height: 200px;
+
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+
+.header {
+  display: flex;
+  align-content: center;
+  gap: var(--space-04);
+
+  font-size: var(--font-size-3xl);
+  font-weight: bold;
+  color: var(--neutral-700);
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+
+  padding: var(--space-04);
+  gap: var(--space-04);
+
+  height: 100%;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.content::-webkit-scrollbar {
+  display: none;
+}
