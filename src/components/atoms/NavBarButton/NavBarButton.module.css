@@ -1,0 +1,22 @@
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: var(--space-04) var(--space-05);
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+}
+
+.root:hover {
+  background-color: var(--neutral-600);
+}
+
+.text {
+  user-select: none;
+
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+
+  color: var(--neutral-100);
+}
