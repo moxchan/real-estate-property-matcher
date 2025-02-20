@@ -1,0 +1,67 @@
+.root {
+  min-width: 400px;
+  width: 40vw;
+  max-width: 500px;
+
+  height: 700px;
+
+  border: 1px solid var(--neutral-100);
+  background-color: white;
+
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--box-shadow-basic);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: var(--space-06);
+  padding: var(--space-06);
+}
+
+.title {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  color: var(--neutral-700);
+}
+
+.text {
+  font-size: var(--font-size-md);
+  color: var(--neutral-600);
+}
+
+.label {
+  font-size: var(--font-size-lg);
+}
+
+.inputCluster {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  padding: var(--space-04);
+  gap: var(--space-05);
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+}
+
+.privacy {
+  display: flex;
+  justify-content: center;
+
+  padding-top: var(--space-04);
+
+  color: var(--neutral-500);
+
+  width: 100%;
+  border-top: 1px solid var(--neutral-200);
+  justify-self: flex-end;
+}

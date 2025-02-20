@@ -30,7 +30,7 @@
   --border-radius-lg: 16px;
   --border-radius-xl: 24px;
 
-  --box-shadow-basic: 0px 2px 8px var(--neutral-200);
+  --box-shadow-basic: 0px 2px 2px var(--neutral-200);
 
   --neutral-000: #ffffff;
   --neutral-050: #f9f9fb;
@@ -43,6 +43,10 @@
   --neutral-700: #4a4d61;
   --neutral-800: #292c3e;
   --neutral-900: #101223;
+
+  --red: #d93636;
+  --red-bright: #f23f3f;
+  --red-dark: #c43d3d;
 
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
@@ -65,9 +69,11 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: var(--neutral-050);
 }
 
 * {
@@ -81,8 +87,16 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
+} */
+
+input {
+  padding: var(--space-04);
+  font-size: var(--font-size-lg);
+
+  border: 1px solid var(--neutral-400);
+  border-radius: var(--border-radius-md);
 }

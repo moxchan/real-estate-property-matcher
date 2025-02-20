@@ -4,7 +4,7 @@ import { User } from "@/@types/user";
 import { isJson, useLocalStorage } from "./useLocalStorage";
 import { isClient } from "./isClient";
 
-const KEY = "user";
+const KEY = "realEstateHub-user";
 
 export const getLocalDefaultUser = (): User | undefined => {
   // Yikes repeated code from ./useLocalStorage because of hook rules

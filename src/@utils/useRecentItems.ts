@@ -3,7 +3,7 @@ import { isJson, useLocalStorage } from "./useLocalStorage";
 import { isClient } from "./isClient";
 import { TrackedItem } from "@/@types/user";
 
-const KEY = "recentItems";
+const KEY = "realEstateHub-recentItems";
 
 export const getLocalRecentItems = () => {
   // Yikes repeated code from ./useLocalStorage because of hook rules

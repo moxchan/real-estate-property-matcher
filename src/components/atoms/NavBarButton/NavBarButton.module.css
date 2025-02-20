@@ -3,9 +3,14 @@
   justify-content: center;
   align-items: center;
 
-  padding: var(--space-04) var(--space-05);
+  padding: var(--space-03) var(--space-05);
   border-radius: var(--border-radius-md);
   cursor: pointer;
+}
+
+.active {
+  background: var(--red);
+  padding: var(--space-03) var(--space-07);
 }
 
 .root:hover {
