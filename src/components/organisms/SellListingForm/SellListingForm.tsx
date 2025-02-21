@@ -3,8 +3,6 @@
 import { useListings } from "@/@utils/useListings";
 import { useEffect, useState } from "react";
 import { MAX_PRICE, PropertyType } from "@/@types/listing";
-
-import styles from "./SellListingForm.module.css";
 import { ListingCard, PropertyTypeCluster } from "../../molecules";
 import { Button } from "@/components/atoms";
 import { toast } from "react-toastify";
@@ -17,6 +15,8 @@ import {
   IconMapPin,
 } from "@tabler/icons-react";
 import { useAppStore } from "@/stores/useAppStore";
+
+import styles from "./SellListingForm.module.css";
 
 const SellListingForm = () => {
   const { user } = useAppStore();

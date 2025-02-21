@@ -5,16 +5,17 @@
   padding: var(--space-05);
   gap: var(--space-04);
 
-  justify-content: center;
+  height: 100%;
+
+  border-right: 2px solid var(--neutral-100);
 }
 
-.title {
-  font-weight: 600;
+.header {
   font-size: var(--font-size-6xl);
+  font-weight: 600;
+  color: var(--neutral-700);
 
   padding-bottom: var(--space-06);
-
-  color: var(--neutral-700);
 }
 
 .inputCluster {
@@ -47,8 +48,4 @@
   gap: var(--space-04);
 
   justify-content: center;
-}
-
-.inputWarning {
-  color: var(--red);
 }
