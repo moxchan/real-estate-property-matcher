@@ -180,6 +180,7 @@ const SellListingForm = () => {
           baths={baths}
           carparks={carparks}
           type={type!}
+          id=""
         />
       </div>
 

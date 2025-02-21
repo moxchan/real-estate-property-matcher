@@ -1,0 +1,6 @@
+.root {
+  display: flex;
+
+  font-size: var(--font-size-6xl);
+  font-weight: 600;
+}

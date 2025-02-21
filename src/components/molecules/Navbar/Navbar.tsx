@@ -1,10 +1,11 @@
 "use client";
 
 import { LogoButton, NavBarButton } from "@/components/atoms";
-import { IconBookmark, IconUserCircle } from "@tabler/icons-react";
+import { IconUserCircle } from "@tabler/icons-react";
 import { useRouter } from "next/navigation";
 
 import styles from "./Navbar.module.css";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const router = useRouter();
@@ -16,9 +17,10 @@ const Navbar = () => {
     router.push("/sell");
   };
 
-  const onSavedClick = () => {
-    router.push("/saved");
+  const onContactClick = () => {
+    toast.info("You already have my email :)");
   };
+
   const onProfileClick = () => {
     router.push("/profile");
   };
@@ -31,9 +33,7 @@ const Navbar = () => {
         <NavBarButton text="Sell" onClick={onSellClick} />
       </div>
       <div className={styles.cluster}>
-        <NavBarButton onClick={onSavedClick}>
-          <IconBookmark />
-        </NavBarButton>
+        <NavBarButton text="Contact" onClick={onContactClick} />
         <NavBarButton onClick={onProfileClick}>
           <IconUserCircle />
         </NavBarButton>

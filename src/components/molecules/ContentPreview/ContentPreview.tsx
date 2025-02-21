@@ -1,15 +1,16 @@
 "use client";
 
 import { useListings } from "@/@utils/useListings";
-
-import styles from "./ContentPreview.module.css";
 import ListingCard from "../ListingCard/ListingCard";
 import { useEffect } from "react";
+import { useAppStore } from "@/stores/useAppStore";
+
+import styles from "./ContentPreview.module.css";
 
 type ContentPreviewVariant =
   | "newest-listings"
-  | "recent-search"
-  | "recent-listings";
+  | "your-listings"
+  | "saved-listings";
 
 interface ContentPreviewProps {
   title: string;
@@ -18,6 +19,7 @@ interface ContentPreviewProps {
 
 const ContentPreview = ({ title, variant }: ContentPreviewProps) => {
   const { listings } = useListings();
+  const { user } = useAppStore();
 
   // identifier is for the scroll event listener targetting.
   const identifier = new Date();
@@ -39,6 +41,10 @@ const ContentPreview = ({ title, variant }: ContentPreviewProps) => {
     switch (variant) {
       case "newest-listings":
         return <NewestListings />;
+      case "your-listings":
+        return <YourListings />;
+      case "saved-listings":
+        return <SavedListings />;
     }
   };
 
@@ -48,7 +54,35 @@ const ContentPreview = ({ title, variant }: ContentPreviewProps) => {
     ).slice(0, 5);
 
     return newestListings.map((listing, i) => (
-      <ListingCard key={`new-listing-${i}`} {...listing} />
+      <ListingCard
+        key={`new-listing-${i}`}
+        {...listing}
+        saved={!!user?.savedItems.find((l) => l.id === listing.id)}
+      />
+    ));
+  };
+
+  const YourListings = () => {
+    const yourListings = listings?.filter((l) => l.poster === user?.name) ?? [];
+
+    return yourListings.map((listing, i) => (
+      <ListingCard
+        key={`your-listing-${i}`}
+        {...listing}
+        saved={!!user?.savedItems.find((l) => l.id === listing.id)}
+      />
+    ));
+  };
+
+  const SavedListings = () => {
+    const savedListings = user?.savedItems ?? [];
+
+    return savedListings.map((listing, i) => (
+      <ListingCard
+        key={`your-listing-${i}`}
+        {...listing}
+        saved={!!user?.savedItems.find((l) => l.id === listing.id)}
+      />
     ));
   };
 
