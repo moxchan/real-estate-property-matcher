@@ -20,7 +20,7 @@ import styles from "./SellListingForm.module.css";
 
 const SellListingForm = () => {
   const { user } = useAppStore();
-  const { listings, submitListing } = useListings();
+  const { listings, performSubmit } = useListings();
 
   const [listingTitle, setListingTitle] = useState("");
   const [location, setLocation] = useState("");
@@ -68,7 +68,7 @@ const SellListingForm = () => {
       return;
     }
 
-    const res = await submitListing({
+    const res = await performSubmit({
       title: listingTitle,
       location,
       price,

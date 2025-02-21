@@ -20,17 +20,15 @@ export const useBuyFilter = () => {
   const performSearch = () => {
     setFilteredListings(
       listings!
-        .filter((l) => (location ? l.location === location : true))
+        .filter((l) => (location?.length ? l.location === location : true))
         .filter((l) => (budgetLow !== undefined ? l.price >= budgetLow : true))
         .filter((l) =>
           budgetHigh !== undefined ? l.price <= budgetHigh : true
         )
         .filter((l) => (type ? l.type === type : true))
-        .filter((l) => (beds !== undefined ? l.beds === beds : true))
-        .filter((l) => (baths !== undefined ? l.baths === baths : true))
-        .filter((l) =>
-          carparks !== undefined ? l.carparks === carparks : true
-        )
+        .filter((l) => (beds ? l.beds === beds : true))
+        .filter((l) => (baths ? l.baths === baths : true))
+        .filter((l) => (carparks ? l.carparks === carparks : true))
     );
   };
 
@@ -39,6 +37,7 @@ export const useBuyFilter = () => {
     setLocation,
     setBudgetLow,
     setBudgetHigh,
+    type,
     setType,
     setBeds,
     setBaths,

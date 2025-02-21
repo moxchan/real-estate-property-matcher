@@ -1,0 +1,13 @@
+.root {
+  display: flex;
+  flex-wrap: wrap;
+
+  padding: var(--space-08);
+  gap: var(--space-05);
+
+  min-width: 550px;
+  width: 60%;
+
+  overflow-y: scroll;
+  scrollbar-width: none;
+}

@@ -1,4 +1,3 @@
-import { useBuyFilter } from "@/@utils/useBuyFilter";
 import { Button } from "@/components/atoms";
 import {
   IconBath,
@@ -9,26 +8,40 @@ import {
   IconSearch,
 } from "@tabler/icons-react";
 import { PropertyTypeCluster } from "@/components/molecules";
+import { Dispatch, SetStateAction } from "react";
+import { PropertyType } from "@/@types/listing";
 
 import styles from "./BuyFilterForm.module.css";
 
-const BuyFilterForm = () => {
-  const {
-    setLocation,
-    setBudgetLow,
-    setBudgetHigh,
-    setType,
-    setBeds,
-    setBaths,
-    setCarparks,
-    performSearch,
-  } = useBuyFilter();
+interface BuyFilterFormProps {
+  setLocation: Dispatch<SetStateAction<string>>;
+  setBudgetLow: Dispatch<SetStateAction<number | undefined>>;
+  setBudgetHigh: Dispatch<SetStateAction<number | undefined>>;
+  type: PropertyType | undefined;
+  setType: Dispatch<SetStateAction<PropertyType | undefined>>;
+  setBeds: Dispatch<SetStateAction<number | undefined>>;
+  setBaths: Dispatch<SetStateAction<number | undefined>>;
+  setCarparks: Dispatch<SetStateAction<number | undefined>>;
+  performSearch: () => void;
+}
+
+const BuyFilterForm = ({
+  setLocation,
+  setBudgetLow,
+  setBudgetHigh,
+  type,
+  setType,
+  setBeds,
+  setBaths,
+  setCarparks,
+  performSearch,
+}: BuyFilterFormProps) => {
   return (
     <div className={styles.root}>
       <div className={styles.header}>Finding your new home</div>
       <div className={styles.section}>
         <div className={styles.sectionTitle}>Property Type</div>
-        <PropertyTypeCluster type={undefined} setType={setType} />
+        <PropertyTypeCluster type={type} setType={setType} />
       </div>
       <div className={styles.section}>
         <div className={styles.sectionTitle}>Listing Details</div>
