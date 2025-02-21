@@ -1,0 +1,9 @@
+.root {
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  padding: var(--space-04);
+  width: 100%;
+}

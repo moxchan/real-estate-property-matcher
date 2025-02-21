@@ -10,7 +10,7 @@ import styles from "./PropertyTypeCluster.module.css";
 
 interface PropertyTypeClusterProps {
   type: PropertyType | undefined;
-  setType: (type: PropertyType) => void;
+  setType: (type: PropertyType | undefined) => void;
 }
 
 const PropertyTypeCluster = ({ type, setType }: PropertyTypeClusterProps) => {
@@ -18,7 +18,9 @@ const PropertyTypeCluster = ({ type, setType }: PropertyTypeClusterProps) => {
     <div className={styles.root}>
       <Button
         icon={<IconHome2 />}
-        onClick={() => setType("house")}
+        onClick={() => {
+          type === "house" ? setType(undefined) : setType("house");
+        }}
         selected={type === "house"}
         expanded
       >
@@ -26,7 +28,9 @@ const PropertyTypeCluster = ({ type, setType }: PropertyTypeClusterProps) => {
       </Button>
       <Button
         icon={<IconBuildingSkyscraper />}
-        onClick={() => setType("apartment")}
+        onClick={() => {
+          type === "apartment" ? setType(undefined) : setType("apartment");
+        }}
         selected={type === "apartment"}
         expanded
       >
@@ -34,7 +38,9 @@ const PropertyTypeCluster = ({ type, setType }: PropertyTypeClusterProps) => {
       </Button>
       <Button
         icon={<IconBuildings />}
-        onClick={() => setType("condo")}
+        onClick={() => {
+          type === "condo" ? setType(undefined) : setType("condo");
+        }}
         selected={type === "condo"}
         expanded
       >

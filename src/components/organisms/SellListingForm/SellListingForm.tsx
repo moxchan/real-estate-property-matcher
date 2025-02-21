@@ -3,8 +3,6 @@
 import { useListings } from "@/@utils/useListings";
 import { useEffect, useState } from "react";
 import { MAX_PRICE, PropertyType } from "@/@types/listing";
-
-import styles from "./SellListingForm.module.css";
 import { ListingCard, PropertyTypeCluster } from "../../molecules";
 import { Button } from "@/components/atoms";
 import { toast } from "react-toastify";
@@ -18,9 +16,11 @@ import {
 } from "@tabler/icons-react";
 import { useAppStore } from "@/stores/useAppStore";
 
+import styles from "./SellListingForm.module.css";
+
 const SellListingForm = () => {
   const { user } = useAppStore();
-  const { listings, submitListing } = useListings();
+  const { listings, performSubmit } = useListings();
 
   const [listingTitle, setListingTitle] = useState("");
   const [location, setLocation] = useState("");
@@ -68,7 +68,7 @@ const SellListingForm = () => {
       return;
     }
 
-    const res = await submitListing({
+    const res = await performSubmit({
       title: listingTitle,
       location,
       price,

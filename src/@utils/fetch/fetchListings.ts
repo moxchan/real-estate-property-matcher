@@ -1,7 +1,7 @@
 import { Listing } from "@/@types/listing";
 
 export const fetchListings = async (): Promise<Listing[]> => {
-  const res = await fetch(`/api/listing`, {
+  const res = await fetch(`/api/find-listing`, {
     method: "GET",
   });
 

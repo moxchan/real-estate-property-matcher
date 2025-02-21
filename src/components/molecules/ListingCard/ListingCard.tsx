@@ -1,6 +1,4 @@
 import { Listing, MAX_PRICE, PropertyType } from "@/@types/listing";
-
-import styles from "./ListingCard.module.css";
 import { capitalise } from "@/@types/string";
 import {
   IconBath,
@@ -10,6 +8,8 @@ import {
   IconCar,
   IconHome2,
 } from "@tabler/icons-react";
+
+import styles from "./ListingCard.module.css";
 
 interface ListingCardProps extends Omit<Listing, "id"> {
   onClick?: () => void;
