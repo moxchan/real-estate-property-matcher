@@ -1,1 +1,1 @@
-export const HERO_IMAGE_COUNT = 4;
+export const HERO_IMAGE_COUNT = 3;

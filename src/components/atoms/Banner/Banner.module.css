@@ -1,0 +1,40 @@
+.root {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  border-radius: var(--border-radius-xl);
+  background-position: center;
+
+  background-size: cover;
+
+  max-height: 400px;
+  height: 400px;
+  width: 100%;
+
+  padding: var(--space-08);
+}
+
+.heading {
+  color: var(--neutral-100);
+
+  font-size: 3rem;
+  font-weight: 700;
+
+  filter: drop-shadow(1px 1px 1px var(--neutral-800));
+}
+
+.subheading {
+  color: white;
+
+  font-size: var(--font-size-2xl);
+  font-weight: 300;
+
+  filter: drop-shadow(2px 2px 2px var(--neutral-600));
+}
+
+.headingBold {
+  color: var(--red);
+  font-weight: 600;
+}
